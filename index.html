@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   html{
+      box-sizing:border-box;
+    }
+    
+   *,
+   *::before,
+   *::after{
+     box-sizing: inherit;
+     margin: 0;
+     padding: 0;
+   }
+   
+   body {
+     width: 100%;
+     height: 660px;
+     background-image: url('back1.jpeg');
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   input {
+     outline: none;
+     border:none;
+     background-image:none;
+     -webkit-box-shadow: none;
+     -moz-box-shadow: none; 
+     box-shadow: none;
+   }
+   
+   main {
+     width: 100%;
+     height: 100%;
+     background-color: green;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: rgba(255, 255, 255, 0.3);
+     backdrop-filter: blur(15px);
+   }
+   
+   .header-logo-wrapper {
+     width: 10%;
+     height: 5%;
+     background-color: #15ff23d0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   img {
+       width: 87%;
+       height: 100%;
+     }
+     
+   .main-body-wrapper {
+     width: 90%;
+     height: 95%;
+     background-color: #15ff23ab;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     border-radius: 10px;
+     background-color: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(15px);
+   }
+     .inner-main-body-wrapler {
+       width: 90%;
+       height: 95%;
+     } 
+        .utme-wrapper {
+         width: 100%;
+         height: 33.3%;
+         display: flex;  
+         justify-content: center;       
+         align-items: center;
+         border-left: 3px solid;
+         border-right: 3px solid;
+         position: relative;
+         border-radius: 10px;
+       }
+       
+       .u-details {
+         position: absolute;
+         top: -7%;
+         left: 3%;
+       }
+       .u-text {
+         border-top: 2px solid;
+         border-left: 2px solid;
+         border-right: 2px solid;
+         background-color: red;
+         border-radius: 5px;
+         background-color: rgba(255, 255, 255, 0.3);
+       }
+       
+         .inner-utme-wrapper {
+           width: 50%;
+           height: 30%;
+           position: relative;
+           display: flex;         
+         }
+           .u-input {
+             width: 100%;
+             height: 100%;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             font-size: 200%;
+             text-align: center;
+             border: 2px solid;
+             border-radius: 5px;
+           }
+           .u-label {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             white-space: nowrap;
+             font-size: 130%;
+             pointer-events: none;
+             transition: 0.3s;
+           }
+             .u-input:focus ~ label,
+             .u-input:valid ~ label {
+               top: -4%;
+               left: 31%;
+               font-size: 110%;
+               background-color: white; 
+               border-top: 2px solid;
+               border-left: 2px solid;
+               border-right: 2px solid;
+               border-radius: 7px;
+             }
+           
+                
+       .olevel-wrapper {
+         width: 100%;
+         height: 33.3%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         border-left: 3px solid;
+         border-right: 3px solid;
+         position: relative;
+         border-radius: 10px;
+         margin-top: 10px;
+       }
+       
+       .o-details {
+           position: absolute;
+           top: -6%;
+           left: -40%;
+         }
+         
+       .o-text {
+         background-color: rgba(255, 255, 255, 0);
+         border-left: 2px solid;
+         border-right: 2px solid;
+         border-top: 2px solid;
+         border-radius: 5px;
+       }
+       
+         .inner-olevel-wrapper {
+           width: 85%;
+           height: 40%;
+           position: relative; 
+         }
+         
+         .o-details {
+           position: absolute;
+           top: -7%;
+           left: 2%;
+         }
+         
+            .o-inner-wrapper {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+             /* position: relative; */
+              pointer-events: none;
+            }
+              .o-label {
+                position: absolute;
+                top: -23%;
+                z-index: 1;
+                left: 15%;
+                border-top: 2px solid;
+                border-right: 2px solid;
+                border-left: 2px solid;
+               border-radius: 3px;
+              
+              }
+
+            .o-input-wrapper {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              border-left: 2px solid;
+              border-right: 2px solid;
+              border-bottom: 2px solid;
+              border-radius: 45px;
+            }
+            .inner-o-input-wrapper {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .o-input {
+              width: 60%;
+              height: 50%;
+              margin: 0 7%;
+              text-align: center;
+              font-size: 110%;
+              border: 2px solid;
+              border-radius: 7px;
+            }
+    
+       
+       .calc-wrapper {
+         width: 100%;
+         height: 33.3%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         border-left: 3px solid;
+         border-right: 3px solid;
+         border-radius: 10px;
+         border-bottom: 3px solid;
+         margin-top: 10px;
+       }
+       
+       .calc-details {
+           position: absolute;
+           top: -7%;
+           left: 2%;
+       }
+       
+       .calc-text {
+         border-top: 2px solid;
+         border-left: 2px solid;
+         border-right: 2px solid;
+         background-color: red;
+         border-radius: 5px;
+         background-color: rgba(255, 255, 255, 0);
+       }
+       
+          .calc-input {
+           width: 50%;
+           height: 30%;
+           font-size: 140%;
+           text-align: center;
+           text-decoration: none;
+            display: inline-block;
+           font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px #888888;
+           transition: border -0s;
+           border-radius: 10px;
+         }
+         
+          .calc-input:hover {
+            border: 2px solid green;
+          }
+         
+        .modalBoxSitting {
+          position: fixed;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.6);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 3;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          backdrop-filter: blur(50px);
+        } 
+          .modalInner {
+            width: 85%;
+            height: 95%;
+            background-color: rgba(255, 255, 255, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 2px solid;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+          }
+          .modalCancel {
+            position: absolute;
+            top: 2%;
+            right: 4%;
+            font-size: 200%;
+          }
+          
+          .innerModal {
+                         width: 96%;
+                        height: 80%;
+                      display: flex;
+            justify-content: center;
+                align-items: center;
+             flex-direction: column;
+             background-color: rgba(60, 179, 113, 0.7);
+             backdrop-filter: blur(12px);
+             border: 2px solid;
+             border-radius: 6px;
+          }
+            .modalQ {
+              width: 100%;
+              height: 30%;
+             /* background-color: green;*/
+              font-size: 200%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .modalForm {
+              width: 100%;
+              height: 15%;
+           /*   background-color: orange; */
+            }
+              .inmodalForm {
+                          width: 100%;
+                          height: 70%;
+                        display: flex;
+                  flex-direction: row;
+              }
+                .modalOnce {
+              /*    background-color: aqua; */
+                            height: 100%;
+                              width: 30%;
+                           display: flex;
+                 justify-content: center;
+                     align-items: center;
+                     font-size: 125%;
+                     border: 2px solid;
+                     border-radius: 10px;
+                }
+                
+                .modalTwice {
+                  background-color: fushia;
+                                width: 70%;
+                              height: 100%;
+                             display: flex;
+                   justify-content: center;
+                       align-items: center;
+                           font-size: 125%;
+                           border: 2px solid;
+                           border-radius: 10px;
+                }
+                
+              .modalCalc {
+                width: 100%;
+                height: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              
+                .modalBtn {
+                  width: 60%;
+                  height: 30%;
+                  border: 2px solid;
+                  border-radius: 10px;
+                  box-shadow: 0px 3px gray;
+                }
+            
+            .scorePic-section {
+              width: 130%;
+              height: 150%;
+              position: fixed;
+              background-color: rgba(255, 255, 255, 0.6);
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 3;
+              display: none; 
+              justify-content: center;
+              align-items: center;
+              backdrop-filter: blur(3px); 
+            }
+              .scorePic-inner {
+                width: 80%;
+                height: 50%;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+              }
+                .ScorePic {
+                  width: 100%;
+                  height: 80%;
+                  border-top-left-radius: 10px;
+                  border-top-right-radius: 10px;
+                  border-top: 2px solid;
+                  border-left: 2px solid;
+                  border-right: 2px solid;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: relative;
+                }
+                .imgPic {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 10px;
+                }
+                .youraggr {
+                  position: absolute;
+                  bottom: 20%;
+                }
+              .saveShare-section {
+                width: 100%;
+                height: 20%;
+                background-color: orangered;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              .Save,
+              .share{
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+  </style> 
+</head>
+<body>
+  <main>
+    <section class="header-logo-wrapper">
+      <img src="logo.png" alt=""></img>
+    </section>    
+    <!-- Header Logo Section Ends Here -->
+    
+    <section class="main-body-wrapper">
+      <div class="inner-main-body-wrapler">
+       
+        <div class="utme-wrapper">
+          <div class="u-details"><p class="u-text">UTME DETAILS</p></div>
+          <div class="inner-utme-wrapper">
+            <input type="number" class="u-input" required>
+            <label class="u-label">Your Utme</label>
+          </div>
+        </div>
+        <!-- UTME Division Ends Here -->
+        
+        
+        <!-- OLEVEL BEGINS HERE -->
+        <div class="olevel-wrapper">
+          <div class="o-details">
+             <p class="o-text">O-LEVEL DETAILS</p>
+           </div>
+         <div class="inner-olevel-wrapper">
+           
+           <div class="o-inner-wrapper">
+             <label class="o-label">Your O-Level</label>
+           </div>
+          
+           
+           <div class="o-input-wrapper">
+            <div class="inner-o-input-wrapper">
+              <input type="text" class="o-input">
+              <input type="text" class="o-input">
+              <input type="text" class="o-input">
+              <input type="text" class="o-input">
+            </div>
+           </div>
+           
+         </div>   
+        </div>
+        <!-- O-Level Division Ends Here -->
+        
+        
+        <div class="calc-wrapper">
+          <div class="calc-details">
+            <p class="calc-text">Calculate</>
+          </div>
+          <input class="calc-input" type="button" value="calculate">
+        </div>
+        <!-- Calculate Button Division Ends Here -->
+        
+        <!-- Modal box -->
+        <div class="modalBoxSitting">
+          <section class="modalInner">
+            <span class="modalCancel">&#10006;</span>
+            <section class="innerModal">
+              <div class="modalQ">How many sitting?</div>
+              <div class="modalForm">
+                <form class="inmodalForm">
+                 
+                  <!-- Modal Once Section -->
+                  <div class="modalOnce">
+                    <div class="imodalOnce">
+                      <input type="radio" name="sitting" value="once"> 
+                      <label>Once</label>
+                    </div>
+                  </div>
+                
+                  <!-- More than twice section -->
+                  <div class="modalTwice">
+                    <div class="imodalTwice">
+                      <input type="radio" name="sitting" value="more than once">
+                      <label>More than Once</label>
+                    </div>
+                  </div>
+                
+                </form>
+              </div>
+            
+              <!-- MODALBTN HERE -->
+              <div class="modalCalc">
+                <input type="Button" value="calculate" class="modalBtn">
+              </div>
+            
+            </section>
+          </section>
+        </div>
+        
+        <!-- YOUR SCORE PIC -->
+        <div class="scorePic-section">
+         
+          <div class="scorePic-inner">
+            
+            <div class="ScorePic">
+              <img src="congrats.jpg" class="imgPic"></img>
+              <div class="youraggr">
+                <p>Your Aggregate Is</p><span class="aggregate"></span>
+              </div>
+            </div>
+            
+            <div class="saveShare-section">
+              <div class="Save">
+                <div>Save</div>
+              </div>
+              
+              <div class="share">
+                <div>Share</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- YOUR SCORE PIC ENDS HERE -->
+      </div>
+    </section>
+  </main>
+  <script>
+    const OLevels_ranks = {
+  A1: 90,
+  B2: 80,
+  B3: 70,
+  C4: 60,
+  C5: 55,
+  C6: 50,
+  D7: 25,
+  E8: 0,
+  F9: 0
+};
+
+var height = document.documentElement.clientHeight;
+document.body.style.height = height + "px";
+
+function limitInput(input, limit) {
+  input.addEventListener("input", function(event) {
+    if (event.target.value.length > limit) {
+      event.target.value = event.target.value.substring(0, limit);
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  let utmeInputLimit = document.querySelector(".u-input");
+  limitInput(utmeInputLimit, 3);
+  
+  let utme_score = 0;
+  
+  utmeInputLimit.addEventListener("blur", function () {
+    let utmeValue = parseInt(utmeInputLimit.value);
+    utme_score = utmeValue;
+  });
+  
+  let allOInput = document.querySelectorAll(".o-input");
+  allOInput.forEach(eachOinput => {
+    limitInput(eachOinput, 2)
+  });
+  
+  let totalOLevel = 0;
+  allOInput.forEach(eachOLevel => {
+    eachOLevel.addEventListener("blur", function() {
+      if (OLevels_ranks.hasOwnProperty(eachOLevel.value)) {
+        totalOLevel += parseInt(OLevels_ranks[eachOLevel.value])
+      }
+      
+    })
+  });
+  
+  let modalPopUp = document.querySelector(".modalBoxSitting");
+  
+  
+  let modalCancelBtn = document.querySelector(".modalCancel");
+  modalCancelBtn.addEventListener("click", function () {
+    modalPopUp.style.display = "none"
+  });
+  
+  
+  let firstCalcBtn = document.querySelector(".calc-input");
+  firstCalcBtn.addEventListener("click", function () {
+    modalPopUp.style.display = "flex";
+  });
+  
+  let weighedUtme = utme_score * 0.7;
+  let weighedOLevel = (totalOLevel + 10) * 0.3;
+  let aggregate = weighedUtme + weighedOLevel;
+  
+  let spanAnswer = document.querySelector(".aggregate");
+  spanAnswer.innerHTML = aggregate;
+  
+  let picAggregrate = document.querySelector(".scorePic-section");
+  
+  let radioBtnSingleSit = document.querySelector('input[name="sitting"][value="more than once"]');
+  
+  let radioBtnMultiSit = document.querySelector('input[name="sitting"][value="once"]');
+  
+  let modalCalcBtn = document.querySelector(".modalBtn");
+  modalCalcBtn.addEventListener("click", function () {
+       if (radioBtnSingleSit.checked || radioBtnMultiSit.checked) {
+      modalPopUp.style.display = "none";
+      let weighedUtme = utme_score * 0.7;
+      let weighedOLevel = (totalOLevel + 10) * 0.3;
+      let aggregate = weighedUtme + weighedOLevel;
+  
+      let spanAnswer = document.querySelector(".aggregate");
+      spanAnswer.innerHTML = aggregate;
+  
+      let picAggregrate = document.querySelector(".scorePic-section");
+      picAggregrate.style.display = "block";
+    }
+  });
+});
+  </script> 
+</body>
+</html>
