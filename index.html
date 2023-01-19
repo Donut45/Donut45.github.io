@@ -658,9 +658,11 @@ document.addEventListener("DOMContentLoaded", function() {
       let weighedUtme = utme_score * 0.7;
       let weighedOLevel = (totalOLevel + 10) * 0.3;
       let aggregate = weighedUtme + weighedOLevel;
-  
+
+      let aggregateRounded = aggregate.toFixed(1);
+
       let spanAnswer = document.querySelector(".aggregate");
-      spanAnswer.innerHTML = aggregate;
+      spanAnswer.innerHTML = aggregateRounded;
   
       let picAggregrate = document.querySelector(".scorePic-section");
       picAggregrate.style.display = "block";
